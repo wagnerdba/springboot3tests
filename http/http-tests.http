@@ -9,7 +9,7 @@ Content-Type: application/json
 }
 
 ### GET EMPLOYEE BY ID
-GET http://localhost:8080/api/employees/1
+GET http://localhost:8080/api/employees/7
 
 ### GET ALL EMPLOYEES
 GET http://localhost:8080/api/employees
