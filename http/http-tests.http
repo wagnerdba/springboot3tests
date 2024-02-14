@@ -1,0 +1,9 @@
+### CREATE EMPLOYEE
+POST http://localhost:8080/api/employees
+Content-Type: application/json
+
+{
+  "fistName": "Wagner",
+  "lastName": "Pires",
+  "email": "wagner.dev.br2@gmail.com"
+}
