@@ -7,6 +7,7 @@ import com.wrtecnologia.ems.mapper.EmployeeMapper;
 import com.wrtecnologia.ems.repository.EmployeeRepository;
 import com.wrtecnologia.ems.service.EmployeeService;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,7 +40,8 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<EmployeeDto> getAllEmployees() {
 
-        List<Employee> employees = employeeRepository.findAll();
+        Sort sort = Sort.by(Sort.Direction.ASC, "firstName"); // Ordena pelo campo "name" em ordem ascendente
+        List<Employee> employees = employeeRepository.findAll(sort);
         return employees.stream().map((employee) -> EmployeeMapper.mapToEmployeeDto(employee))
                 .collect(Collectors.toList());
     }
